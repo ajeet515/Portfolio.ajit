@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phonk Music Player</title>
+  <style>
+    /* 1. Global Styles & Variables */
+    :root {
+      --accent: #9eff00; /* Neon Green */
+      --bg-dark: #0a0a0a;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: white;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 2. Main Player (Top Section) */
+    .main-player {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 25px;
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      margin-bottom: 40px;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    #albumArt {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    #songTitle {
+      font-size: 1.4rem;
+      margin: 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+    }
+
+    /* Style the default audio player */
+    .audio-main {
+      width: 100%;
+      filter: invert(1) hue-rotate(180deg) brightness(1.5); /* Makes it look dark/pro */
+      height: 40px;
+    }
+
+    /* 3. Playlist Section (Grid) */
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .track-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 300px;
+      border-spacing: 50px;
+    }
+
+    .track-card:hover {
+      background: rgba(158, 255, 0, 0.1);
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .track-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .track-card p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #eee;
+    }
+
+    /* Custom scrollbar for a premium look */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  </style>
+</head>
+<body>
+
+  <div class="main-player">
+    <img id="albumArt" src="/playlist/1768728091235.jpg" alt="Phonk Art">
+    <h2 id="songTitle">Ready to Play</h2>
+    <audio id="mainAudio" controls class="audio-main" autoplay src=""></audio>
+  </div>
+
+  <h3 style="width: 100%; max-width: 900px; margin-bottom: 20px;">Your Collection</h3>br
+
+  <div class="playlist-grid">
+    
+    <div class="track-card" onclick="changeTrack('/playlist/phonk-music-phonk-2026-456334.mp3','/playlist/Screenshot_20260107-182549.jpg','Phonk 2026')">
+      <img src="/playlist/Screenshot_20260107-182549.jpg">
+      <p>Phonk 2026</p>
+    </div><br>
+
+    <div class="track-card" onclick="changeTrack('/playlist/phonk-music-slowed-phonk-434616.mp3','/playlist/1768728091235.jpg','Slowed Phonk')">
+      <img src="/playlist/1768728091235.jpg">
+      <p>Slowed Phonk</p>
+    </div><br>
+
+    <div class="track-card" onclick="changeTrack('/playlist/brazilian-phonk-phonk-453268.mp3','/playlist/Screenshot_20260107-182549.jpg','Brazilian Phonk')">
+      <img src="/playlist/Screenshot_20260107-182549.jpg">
+      <p>Brazilian Phonk</p>
+    </div><br>
+
+    <div class="track-card" onclick="changeTrack('/playlist/phonk-253422.mp3','/playlist/Screenshot_20260107-182549.jpg','Classic Phonk')">
+      <img src="/playlist/Screenshot_20260107-182549.jpg">
+      <p>Classic Phonk</p>
+    </div><br>
+
+  </div>
+
+  <script>
+    function changeTrack(newFilePath, imageSrc, title) {
+      const player = document.getElementById('mainAudio');
+      const image = document.getElementById('albumArt');
+      const titleText = document.getElementById('songTitle');
+
+      player.src = newFilePath;
+      image.src = imageSrc;
+      titleText.innerText = title;
+
+      player.load();
+      player.play();
+      
+      // Auto-scroll to top so user sees the player start
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
