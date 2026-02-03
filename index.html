@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeet Yadav | Frontend Developer</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family: 'Segoe UI',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#0b0f19;color:white;overflow-x:hidden;}
+
+/* NAVBAR */
+header{
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;
+align-items:center;padding:15px 8%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+header h2{color:#ff004f;}
+nav a{
+color:white;text-decoration:none;
+margin-left:25px;font-size:18px;
+position:relative;
+}
+nav a::after{
+content:"";position:absolute;left:0;bottom:-6px;
+width:0;height:2px;background:#ff004f;
+transition:.3s;
+}
+nav a:hover::after{width:100%;}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 10%;
+}
+.hero-text h1{font-size:55px;}
+.hero-text span{color:#ff004f;}
+.hero-text p{color:#ccc;margin:20px 0;max-width:500px;}
+.btn{
+display:inline-block;
+background:#ff004f;
+padding:12px 30px;
+border-radius:30px;
+color:white;text-decoration:none;
+margin-top:15px;
+transition:.3s;
+}
+.btn:hover{box-shadow:0 0 25px #ff004f;}
+
+.social i{
+font-size:22px;margin-right:15px;
+margin-top:20px;cursor:pointer;
+transition:.3s;
+}
+.social i:hover{color:#ff004f;transform:translateY(-5px);}
+
+/* FLOAT IMAGE */
+.hero img{
+width:280px;border-radius:50%;
+border:5px solid #ff004f;
+animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+.imgfloat {
+  width:280px;border-radius:50%;
+border:5px solid #ff004f;
+animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* SECTION */
+section{padding:100px 10%;}
+.title{text-align:center;margin-bottom:60px;}
+.title h2{font-size:40px;color:#ff004f;}
+
+/* GLASS CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:25px;
+text-align:center;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 0 30px #ff004f;
+}
+
+/* CONTACT */
+form{
+  background-image: url(/1738078572115.jpg);
+max-width:450px;margin:auto;
+display:flex;flex-direction:column;
+gap:15px;
+}
+input,textarea{
+padding:12px;border:none;
+border-radius:10px;
+}
+
+/* SCROLL REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#06090f;
+color:#aaa;
+}
+
+@media(max-width:768px){
+.hero{flex-direction:column;text-align:center;}
+.hero img{margin-top:40px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Ajeet</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<h1>Hi, I'm <span id="typing"></span></h1>
+<h3>Frontend Developer</h3>
+<p>Computer Science student (2026) focused on building modern and interactive web apps.</p>
+<a href="resume.pdf" class="btn">Download CV</a>
+<div class="social">
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-github"></i>
+<i class="fab fa-whatsapp"></i>
+</div>
+</div>
+<img src="/portfolio/02-Developer Hiring and Skills (1).png">
+</section>
+
+<section id="about" class="reveal">
+  <img  class="imgfloat" src="/1730176148430.jpg">
+<div class="title"><h2>About Me</h2></div>
+<center>
+  <em>
+    <h3 style="color: white;margin-top: -5%;">
+     __ who i am __
+    </h3>
+  </em>
+  </center>
+<p style="text-align:center;color:#ccc;max-width:800px;margin:auto;">
+  Hi, i am a Computer Science Engineering student, expected to graduate in 2026. I completed my 10th in 2023 and have been passionate about technology ever since.<br><br>
+
+ i have know with HTML, CSS, JavaScript, Python, C, and SQL, and I enjoy building and learning through projects. Currently, I m focusing on frontend developer and exploring how to create interactive ,user-friendly applications.<br><br>
+Outside of academics, I love playing volleyball, which helps me stay active and build teamwork skills.<br><br>
+
+excited to keep learning, growing, and building innovative solutions in the world of technology.
+
+</p>
+</section>
+
+<section id="skills" class="reveal">
+  <img class="imgfloat" src="/portfolio/images.jpeg">
+<div class="title"><h2>Skills</h2></div>
+<center>
+  <em>
+    <h3 style="color: white;margin-top: -5%;">
+     __ what i know __
+    </h3>
+  </em>
+  </center>
+  <p style="text-align:center;color:#ccc;max-width:800px;margin:auto;"  >
+    I    am   , fast - learning developer     with strong   problem-solving skills . I enjoy writing clean, optimized, and efficient code ("code    shrink" as my hobby). <br><br>I have experience in leading teams during projects, showing patience and responsibility while supporting team members. Currently in the learning stage, I am highly motivated to grow and adapt quickly to new technologies.
+   <br><br>
+   Frontend Development
+
+HTML5, CSS3 Building responsive and accessible web pages
+
+JavaScript (Basic)  Adding interactivity and simple logic to websites
+<br><br>
+Soft Skills
+
+Team Leadership
+
+Patience & Problem Solving
+
+Fast Learner & Adaptable
+
+Growth Mindset
+  </p>
+  <br><br>
+<div class="grid">
+<div class="card"><h3>HTML</h3><p>Semantic & Responsive</p></div>
+<div class="card"><h3>CSS</h3><p>Flexbox & Animations</p></div>
+<div class="card"><h3>JavaScript</h3><p>DOM & Logic</p></div>
+<div class="card"><h3>Python</h3><p>Basics</p></div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<div class="title"><h2>Projects</h2></div>
+<center>
+  <em>
+    <h3 style="color: white;margin-top: -5%;">
+     __ basic project __
+    </h3>
+  </em>
+  </center>
+
+<div class="grid">
+<div class="card"> <h3>Portfolio</h3><p>Responsive personal website</p></div>
+<div class="card"><h3>Login UI</h3><p>Authentication interface</p></div>
+<a style="text-decoration: none; color: white;"  href="/playlist/playlist1.html">
+<div class="card"> <h3>Music playlist</h3><p>Responsive and phonk song</p></div></a>
+<a style="text-decoration: none; color: white;"  href="/calculator/calcu1.html">
+<div class="card"><h3>Calculator</h3><p>simple & good looking calculator</p></div>
+</a>
+<a style="text-decoration: none; color: white;"  href="/check .html/form.html">
+<div class="card"><h3>Form applied</h3><p>simple & good looking form </p></div>
+</a>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="title"><h2>Contact</h2></div>
+<center>
+  <em>
+    <h3 style="color: white;margin-top: -5%;">
+     __ get in touch __
+    </h3>
+  </em>
+  </center>
+<form action="https://api.web3forms.com/submit" method="POST" style="color: white;">
+	<div class="contact-left-title">
+		
+	</div>
+	<input type="hidden" name="access_key" value="1f400be2-0748-4388-8245-40b67403664f">
+    
+    <label for="">Name:</label>
+<input type="text" name="name" placeholder="your name" required><br><br>
+<label for="">Email:</label>
+    <input type="email" name="email" placeholder="email" required><br><br>
+    <label for="">Message:</label>
+    <textarea name="message" placeholder="write something" required></textarea><br><br>
+
+   
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+<button class="btn">Send Message</button>
+</form>
+</section>
+
+<footer>
+© 2026 Ajeet Yadav | ay739343@gmail.com
+</footer>
+
+<script>
+// Typing Effect
+const text="Ajeet Yadav";
+let i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;setTimeout(typing,120);
+}}
+typing();
+
+// Scroll Reveal
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add("active");
+}
+});
+});
+</script>
+</body>
+</html>
